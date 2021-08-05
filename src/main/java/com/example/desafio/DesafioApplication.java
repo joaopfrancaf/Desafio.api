@@ -7,6 +7,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class DesafioApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DesafioApplication.class, args);		
+		SpringApplication.run(DesafioApplication.class, args);	
+		
+		System.out.println("teste git");
 	}
 }
