@@ -14,13 +14,17 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @Table(name="participante")
-public class ParticipanteEntities {
+public class ParticipanteEntities implements Serializable {
+
+	private static final long serialVersionUID = 6136567631688339586L;
 
 	@Id
 	@Column(name = "id")

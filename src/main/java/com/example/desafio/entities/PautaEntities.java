@@ -14,6 +14,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
 
 @Entity
 @Data
@@ -21,7 +23,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 @Table(name="pauta")
-public class PautaEntities {
+public class PautaEntities implements Serializable {
+
+	private static final long serialVersionUID = 6196517611618339586L;
 
 	@Id
 	@Column(name = "id")

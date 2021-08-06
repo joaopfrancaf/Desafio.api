@@ -9,33 +9,35 @@ import com.example.desafio.entities.PautaParticipanteEntities;
 
 public class Converter {
 
-	public static PautaEntities converterToEntity (PautaDto pautaDto) {
-		
-		PautaEntities pauta = new PautaEntities();
-		
-		pauta.setName(pautaDto.getName());
-		
-		return pauta;
-	}
-	
-	public static ParticipanteEntities converterToEntity (ParticipanteDto participanteDto) {
-		
-		ParticipanteEntities participante = new ParticipanteEntities();
-		
-		participante.setName(participanteDto.getName());
-		
-		return participante;
-	}
-	
-	public static PautaParticipanteEntities converterToEntity (PautaParticipanteDto pautaParticipanteDto) {
-		
-		PautaParticipanteEntities pautaparticipante = new PautaParticipanteEntities();
-		
+    public static PautaEntities converterToEntity(PautaDto pautaDto) {
+
+        PautaEntities pauta = new PautaEntities();
+
+        pauta.setName(pautaDto.getName());
+
+        return pauta;
+    }
+
+    public static ParticipanteEntities converterToEntity(ParticipanteDto participanteDto) {
+
+        ParticipanteEntities participante = new ParticipanteEntities();
+
+        participante.setName(participanteDto.getName());
+
+        return participante;
+    }
+
+    public static PautaParticipanteEntities converterToEntity(PautaParticipanteDto pautaParticipanteDto,
+                                                              PautaEntities pauta,
+															  ParticipanteEntities participante) {
+
+        PautaParticipanteEntities pautaparticipante = new PautaParticipanteEntities();
+
+		pautaparticipante.setParticipanteEntities(participante);
+		pautaparticipante.setPautaEntities(pauta);
 		pautaparticipante.setVoto(pautaParticipanteDto.getVoto());
-		pautaparticipante.setIdParticipante(pautaParticipanteDto.getIdParticipante());
-		pautaparticipante.setIdPauta(pautaParticipanteDto.getIdPauta());
-		
-		return pautaparticipante;
-		
-	}
+
+        return pautaparticipante;
+
+    }
 }

@@ -33,8 +33,8 @@ public class SwaggerConfig {
 
     private ApiInfo getApiInfo() {
         return new ApiInfoBuilder()
-                .title("Dragons Api")
-                .description("API para CRUD de dragoes")
+                .title("Desafio Api")
+                .description("API para votação")
                 .version("1.0.0")
                 .contact(new Contact("Joao Pedro", null,"joappedro@gmail.com" ))
                 .build();
