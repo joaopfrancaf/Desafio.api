@@ -1,4 +1,4 @@
-package com.example.desafio.entities;
+package com.example.desafio.entity;
 
 
 import javax.persistence.Column;
@@ -23,7 +23,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @Builder
 @Table(name="pauta")
-public class PautaEntities implements Serializable {
+public class Pauta implements Serializable {
 
 	private static final long serialVersionUID = 6196517611618339586L;
 

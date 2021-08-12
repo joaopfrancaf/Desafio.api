@@ -1,4 +1,4 @@
-package com.example.desafio.entities;
+package com.example.desafio.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -14,7 +14,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @Builder
 @Table(name="pauta_participante")
-public class PautaParticipanteEntities implements Serializable {
+public class PautaParticipante implements Serializable {
 
 	private static final long serialVersionUID = 6636567677688099589L;
 
@@ -24,11 +24,11 @@ public class PautaParticipanteEntities implements Serializable {
 	
 	@ManyToOne
     @JoinColumn(name = "ID_PAUTA", referencedColumnName = "id")
-	private PautaEntities pautaEntities;
+	private Pauta pautaEntities;
 	
 	@ManyToOne
     @JoinColumn(name = "ID_PARTICIPANTE", referencedColumnName = "id")
-	private ParticipanteEntities participanteEntities;
+	private Participante participanteEntities;
 	
 	private String voto;
 }

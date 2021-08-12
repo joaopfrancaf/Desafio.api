@@ -1,15 +1,15 @@
 package com.example.desafio.service;
 
-import com.example.desafio.entities.ParticipanteEntities;
-import com.example.desafio.entities.PautaEntities;
 import com.example.desafio.repository.ParticipanteRepository;
 import com.example.desafio.repository.PautaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.example.desafio.dtos.PautaParticipanteDto;
-import com.example.desafio.entities.PautaParticipanteEntities;
-import com.example.desafio.estaticos.Converter;
+import com.example.desafio.Converter.Converter;
+import com.example.desafio.DTO.PautaParticipanteDTO;
+import com.example.desafio.entity.Participante;
+import com.example.desafio.entity.Pauta;
+import com.example.desafio.entity.PautaParticipante;
 import com.example.desafio.repository.PautaParticipanteRepository;
 
 import java.util.Optional;
@@ -26,12 +26,12 @@ public class PautaParticipanteSaveService {
 	@Autowired
 	private PautaParticipanteRepository pautaParticipanteRepository;
 	
-	public PautaParticipanteDto pautaParticipanteSave (PautaParticipanteDto pautaParticipanteDto) {
+	public PautaParticipanteDTO pautaParticipanteSave (PautaParticipanteDTO pautaParticipanteDto) {
 		
-		PautaEntities pauta = pautaRepository.getById(pautaParticipanteDto.getIdPauta());
-		ParticipanteEntities participante = participanteRepository.getById(pautaParticipanteDto.getIdParticipante());
+		Pauta pauta = pautaRepository.getById(pautaParticipanteDto.getIdPauta());
+		Participante participante = participanteRepository.getById(pautaParticipanteDto.getIdParticipante());
 
-		PautaParticipanteEntities pp = Converter.converterToEntity(pautaParticipanteDto, pauta, participante);
+		PautaParticipante pp = Converter.converterToEntity(pautaParticipanteDto, pauta, participante);
 
 		pautaParticipanteRepository.save(pp);
 		

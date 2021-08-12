@@ -5,9 +5,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.desafio.dtos.ParticipanteDto;
-import com.example.desafio.dtos.PautaDto;
-import com.example.desafio.dtos.PautaParticipanteDto;
+import com.example.desafio.DTO.ParticipanteDTO;
+import com.example.desafio.DTO.PautaDTO;
+import com.example.desafio.DTO.PautaParticipanteDTO;
 import com.example.desafio.service.ParticipanteSaveService;
 import com.example.desafio.service.PautaParticipanteSaveService;
 import com.example.desafio.service.PautaSaveService;
@@ -24,21 +24,21 @@ public class SaveController {
 	private PautaParticipanteSaveService pautaParticipanteSaveService;
 	
 	@PostMapping("/pautaadd")
-	 public PautaDto savePauta(@RequestBody PautaDto pautaDto) {		
+	 public PautaDTO savePauta(@RequestBody PautaDTO pautaDto) {		
 		//PautaSaveService pautaSaveService = new PautaSaveService(); //precisa colocar como atributo da classe com o @Autowired para funcionar na web
 		
 		return pautaSaveService.savePauta(pautaDto);
 	  }
 	 
 	@PostMapping("/participanteadd")
-	 public ParticipanteDto saveParticipante(@RequestBody ParticipanteDto participanteDto) {
+	 public ParticipanteDTO saveParticipante(@RequestBody ParticipanteDTO participanteDto) {
 		//ParticipanteSaveService participanteSaveService = new ParticipanteSaveService();
 		
 		return participanteSaveService.saveParticipante(participanteDto);
 	  }
 	
 	@PostMapping("/pautaparticipanteadd")
-	 public PautaParticipanteDto savePautaParticipante(@RequestBody PautaParticipanteDto pautaParticipanteDto) {
+	 public PautaParticipanteDTO savePautaParticipante(@RequestBody PautaParticipanteDTO pautaParticipanteDto) {
 		//PautaParticipanteSaveService pautaParticipanteSaveService = new PautaParticipanteSaveService();
 		
 		return pautaParticipanteSaveService.pautaParticipanteSave(pautaParticipanteDto);

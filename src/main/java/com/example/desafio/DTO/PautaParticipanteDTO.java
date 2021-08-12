@@ -1,4 +1,4 @@
-package com.example.desafio.dtos;
+package com.example.desafio.DTO;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class PautaParticipanteDto {
+public class PautaParticipanteDTO {
 
 	private String voto;
 	private Long idPauta;

@@ -1,5 +1,4 @@
-package com.example.desafio.dtos;
-
+package com.example.desafio.DTO;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -7,7 +6,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class ParticipanteDto {
+public class PautaDTO {
 
 	private String name;
 }
